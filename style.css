@@ -1,0 +1,999 @@
+/*шрифт*/
+@font-face {
+  font-family: "MonaspaceKrypton-MediumItalic";
+  src: url("font/static/MonaspaceKrypton-MediumItalic.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MonaspaceKrypton-Regular";
+  src: url("font/static/MonaspaceKrypton-Regular.otf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "MonaspaceKrypton-Medium";
+  src: url("font/static/MonaspaceKrypton-Medium.otf");
+  font-style: normal;
+}
+.popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden !important;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 45%;
+  height: 60%;
+  border-radius: 7px;
+}
+
+.popup-close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body { /*для всего сайта стили*/
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'MonaspaceKrypton-Regular';
+  overflow-x: hidden !important;
+}
+.header_row {/*шапка профиля*/
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text1, .text2, .text3_1 { /*стили для Доставки, Контактов, Ростова*/
+  font-size: 19px;
+  font-family: 'MonaspaceKrypton-Regular';
+  text-align: center;
+}
+.text3 { /*стиль для названия магазина*/
+  font-size: 48px;
+  font-family: 'MonaspaceKrypton-MediumItalic';
+  text-align: center;
+  margin-top: 14px;
+}
+
+/*все иконки*/
+.icon {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.icon1, .icon2, .icon3 {
+  padding-right: 20px;
+  padding-left: 20px; 
+}
+
+/*список товаров*/
+.menu_row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.menu_1, .menu_2, .menu_3, .menu_4 {
+  text-align: center;
+}
+/*текст товаров*/
+.text4, .text5, .text6, .text7 {
+  font-size: 20px;
+  font-family: "MonaspaceKrypton-Medium";
+  text-align: center;
+}
+.text_4, .text_5, .text_6, .text_7 , .text_3_1, .text_1, .text_2, .text_3 {
+  color: black;
+  text-decoration: none;
+}
+.number a:hover {
+  color: black;
+}
+
+.photo_main { /*1 реклама*/
+    display: flex;
+  height: 78vh;
+  background: url('images/1_baner.png') no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.photo_main2 { /*2 реклама*/
+  display: flex;
+  height: 78vh;
+  background: url('images/2_baner.png') no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.block { /*блок для текста рекламы*/
+  position: absolute;
+  top: 60%;
+  right: 100px;
+  transform: translateY(-55%);  
+}
+
+/*текст для 2 рекламы*/
+.text_block3 {
+  font-size: 50px;
+  text-align: center;
+  font-family: "MonaspaceKrypton-Regular", serif;
+  letter-spacing: 8px;
+}
+.text_block4 {
+  font-size: 23px;
+  text-align: center;
+}
+
+/*текст для 1 рекламы*/
+.text_block1 {
+  font-size: 45px;
+  font-family: "MonaspaceKrypton-Regular";
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  font-weight: 580;
+}
+.text_block2 {
+  font-size: 23px;
+}
+
+/*блок для кнопки 1 рекламы */
+.button_block1 {
+  margin-top: 50px;
+}
+/*блок для кнопки 2 рекламы */
+.button_block2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*кнопка 1 и 2 рекламы */
+.button_block_1, .button_block_2 {
+  background-color: black;
+  padding: 10px 40px 10px 40px;
+  border-radius: 3px;
+}
+
+.button_text { /*текст для 1 и 2 рекламы */
+  font-family: "MonaspaceKrypton-Regular";
+  font-size: 22px;
+  color: white;
+}
+
+/* .klass {
+ object-fit: fill;
+} */
+.courses_1, .courses_2, .courses_3 {
+  width: 300px;
+  height: 400px;
+  margin: 50px 70px 50px 70px;
+  background-color: white;
+  border-radius: 10px;
+}
+.courses_1:hover  {
+  box-shadow: 0 0 10px 10px rgba(81, 81, 83, 0.2);
+}
+.courses_2:hover  {
+  box-shadow: 0 0 10px 10px rgba(81, 81, 83, 0.2);
+}
+.courses_3:hover  {
+  box-shadow: 0 0 10px 10px rgba(81, 81, 83, 0.2);
+}
+.courses {
+  justify-content: center;
+  display: flex;
+}
+.img_courses_1, .img_courses_2, .img_courses_3 {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.text_courses_1,.cena_courses_1 {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.button_courses_1, .button_courses_2, .button_courses_3 {
+  text-align: center;
+}
+.button_1,.button_2, .button_3, .button_4{
+  border: none;
+}
+.button-container_1, .button-container_2, .button-container_3 {
+  position: relative;
+}
+.button_1, .button_3 {
+  position: absolute;
+  margin-left: 10px;
+  top: -100px; /* relative to its parent wrapper */
+  z-index: 3;
+  font-size: 30px;
+  background-image: url('images/left.png');
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  opacity: 0.8;
+  background-color: white;
+}
+.button_2, .button_4 {
+  position: absolute; /* becomes a layer */
+  top: -100px; /* relative to its parent wrapper */
+  z-index: 3;
+  font-size: 30px;
+  margin-left: 260px;
+  background-image: url('images/right.png');
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  opacity: 0.8;
+  background-color: white;
+}
+.cena_courses_1, .text_courses_1 {
+  text-align: center;
+  font-family: "MonaspaceKryptonRegular";
+  font-size: 18px;
+}
+.p1 {
+  margin-bottom: 0px;
+  font-family: "MonaspaceKrypton-Regular";
+}
+.button_click {
+  margin-top: 15px;
+  background-color: white;
+  padding: 6px 10px 6px 10px;
+  border: 1px solid;
+  gap: 1000px;
+}
+.button_click1 {
+  margin-top: 15px;
+  background-color: white;
+  padding: 6px 10px 6px 10px;
+  border: 1px solid;
+}
+.title {
+  font-size: 40px;
+}
+.courses_title {
+  margin-top: 40px;
+  margin-left: 100px;
+}
+.title_1 {
+  margin-left: 80px;
+  margin-top: 60px;
+}
+.title1, .title3, .title5 {
+  font-size: 16px;
+  font-family: "MonaspaceKrypton-Regular";
+  opacity: 0.7;
+  margin-bottom: 0px;
+}
+.title2, .title4, .title6 {
+  font-size: 28px;
+  font-family: "MonaspaceKrypton-Regular";
+  margin-bottom: 25px;
+}
+.help_text {
+  display: inline-block;
+  vertical-align:top;
+}
+.title_help {
+  font-size: 58px;
+  font-family: "MonaspaceKrypton-Regular";
+  letter-spacing: 10px;
+  margin: 0px 0px 20px 0;
+}
+.title_company {
+  font-size: 58px;
+  font-family: "MonaspaceKrypton-Regular";
+  letter-spacing: 10px;
+  text-align: center;
+}
+.text_company {
+  font-size: 20px;
+  font-family: "MonaspaceKrypton-Regular";
+}
+.Company {
+  margin-bottom: 90px;
+}
+.help_photo {
+  display: inline-block;
+}
+.help {
+  margin-bottom: 90px;
+  margin-top: 20px;
+}
+footer {
+  background-color: rgba(214, 212, 212, 0.268);
+}
+.footer1 {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 50px;
+}
+.footer_1, .footer_2, .footer_3 {
+  justify-content: center;
+  margin-top: 60px;
+}
+.footer_1 {
+  margin-right: 150px;
+}
+.footer_2 {
+  margin-right: 150px;
+}
+
+
+.overlay-container { 
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.6); 
+  justify-content: center; 
+  align-items: center; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  z-index: 9999;
+} 
+
+.popup-box { 
+  background-color: #fff;
+  padding: 24px; 
+  border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+  width: 440px; 
+  height: 450px;
+  text-align: center;  
+  opacity: 0; 
+  transform: scale(0.8); 
+  animation: fadeInUp 0.5s ease-out forwards; 
+}
+
+.popup-box1 { 
+  background-color: #fff;
+  padding: 24px; 
+  border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+  width: 440px; 
+  height: 480px;
+  text-align: center;  
+  opacity: 0; 
+  transform: scale(0.8); 
+  animation: fadeInUp 0.5s ease-out forwards; 
+}
+
+.popup-row {
+  display: flex;
+}
+
+.form-container { 
+  display: flex; 
+  flex-direction: column;
+} 
+
+.form-label { 
+  margin-bottom: 10px; 
+  font-size: 16px; 
+  color: #444; 
+  text-align: left; 
+} 
+
+.form-input { 
+  padding: 10px; 
+  margin-bottom: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  font-size: 16px; 
+  width: 100%; 
+  box-sizing: border-box; 
+} 
+
+.btn-submit1, .btn-submit2{ 
+  padding: 12px 24px; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  background-color: black; 
+  color: #fff;
+  margin-bottom: 30px;
+} 
+
+.btn-submit3 {
+  margin-bottom: 0;
+  padding: 12px 24px; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  background-color: black; 
+  color: #fff;
+}
+.btn-close-popup { 
+  margin: 12px 17px; 
+  background-color: white;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  border: none; 
+  border-radius: 8px;
+} 
+
+/* Keyframes for fadeInUp animation */ 
+@keyframes fadeInUp { 
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  } 
+
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+} 
+
+/* Animation for popup */ 
+.overlay-container.show { 
+  display: flex; 
+  opacity: 1; 
+} 
+.popup-text {
+  font-size: 45px;
+  font-family: "MonaspaceKrypton-Regular";
+  text-align: center;
+} 
+.btn-open-popup {
+  border: none;
+  background-color: white;
+}
+.icon1 {
+  overflow-y: hidden;
+}
+
+
+.block_info_1 {
+  display: flex;
+  justify-content: space-between; /* Или другое значение для распределения */
+}
+
+.overlay-container3, .overlay-container4 { 
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.6); 
+  justify-content: center; 
+  align-items: center; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  z-index: 9999;
+} 
+.popup-box3, .popup-box4 { 
+  background-color: #fff;
+  padding: 24px; 
+  border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+  width: 1000px; 
+  height: 700px;
+  text-align: center;  
+  opacity: 0; 
+  transform: scale(0.8); 
+  animation: fadeInUp 0.5s ease-out forwards; 
+  overflow-y: scroll;
+}
+@keyframes fadeInUp { 
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  } 
+
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+} 
+
+/* Animation for popup */ 
+.overlay-container3.show,  .overlay-container4.show{ 
+  display: flex; 
+  opacity: 1; 
+} 
+.btn-open-popup {
+  border: none;
+  background-color: white;
+}
+.btn-close-popup { 
+  margin: 12px 17px; 
+  background-color: white;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  border: none; 
+  border-radius: 8px;
+} 
+.more-images {
+  /* display: flex;
+  /* justify-content: space-between; */
+  /* margin-top: 10px;
+  flex-direction: row; */
+  /* align-items: center; */
+  /* gap: 10px;  */
+  display: grid;
+    grid-template-columns: auto auto; /* Определяет два столбца */
+    grid-gap: 20px;
+    margin-left: 70px;
+}
+
+.more-images img {
+  width: 80px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.img_obzor {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
+
+.obzor_row {
+  display: flex;
+}
+.container_card{
+  flex: 1;
+  margin-right: 0px;
+}
+.card {
+  width: 400px;
+  height: 340px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.opisanie {
+flex: 1;
+}
+.title1_opisanie {
+  font-size: 21px;
+  font-family: "MonaspaceKrypton-Medium";
+  padding: 45px 0 20px 0;
+  display: block;
+}
+.title2_opisanie {
+  float: left;
+  padding-bottom: 26px;
+  font-size: 19px;
+  font-family: "MonaspaceKrypton-Medium";
+  letter-spacing: 4px;
+}
+.text1_opisanie, .text2_opisanie, .text3_opisanie, .text3_opisanie, .text4_opisanie, .text6_opisanie, .text5_opisanie {
+  float: left;
+  padding-bottom: 7px;
+}
+
+.cena {
+  margin-top: 20px;
+  float: left;
+}
+.text_cena {
+  padding-right: 59px;
+  display: inline-block;
+  font-size: 21px;
+  font-family: "MonaspaceKrypton-Medium";
+}
+.text_cost{
+  display: inline-block;
+  border: 1px solid black;
+  padding: 4px 40px 4px 40px;
+  font-size: 19px;
+}
+
+.text_otzuv {
+  display: flex;
+  justify-content: space-between;
+}
+.title_otzuv {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding: 10px 13px;
+  margin: 40px 0 20px 0;
+  font-size: 24px;
+  font-family: "MonaspaceKrypton-Medium";
+}
+/*-----------------------------------------*/
+
+.reviews{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.review{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  text-align: justify;
+  border-radius: 10px;
+  padding: 10px 13px;
+}
+.review:hover {
+    box-shadow: 0 0 10px 10px rgba(81, 81, 83, 0.2);
+}
+.reviewName{
+  font-size: 19px;
+}
+.reviewText{
+  font-size: 15px;
+  font-family: "MonaspaceKrypton-Regular";
+}
+.reviewWrite {
+  display: flex;
+  justify-content: space-between;
+}
+.Writerewiew {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding: 10px 13px;
+  font-size: 24px;
+  font-family: "MonaspaceKrypton-Medium";
+}
+.reviewsBlock{
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  border: 1px solid grey;
+  border-radius: 6px;
+}
+
+.reviewBlock{
+  display: flex;
+  flex-direction: column;
+  /* width: 30%; */
+  /* text-align: justify; */
+  border-radius: 10px;
+  padding: 0 13px 0 13px;
+}
+.ratingBlock {
+  display: flex;
+  gap: 40px;
+  align-items:center;
+  padding: 10px 13px;
+}
+.star, .star1, .star2 {
+  font-size: 24px;
+  cursor:default;
+}
+
+.ratingBlock1{
+  border: 1px solid grey;
+  opacity: 0.3;
+  border-radius: 5px;
+  width: 400px;
+  height: 70px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.ratingBlock2 {
+  border: 1px solid grey;
+  opacity: 0.3;
+  border-radius: 5px;
+  width: 400px;
+  height: 70px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.imgFiles {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+.ICON {
+  margin-top: 20px;
+}
+.ButtonsOtzuv {
+  background-color: white;
+  width: 400px;
+  height: 37px;
+  border-radius: 5px;
+}
+.ButtonOtzuv {
+  margin-top: 17px;
+  margin-bottom: 30px;
+}
+
+/*ДЛЯ КОРЗИНЫ*/
+
+.overlay-container4 { 
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.6); 
+  justify-content: center; 
+  align-items: center; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  z-index: 9999;
+} 
+
+.popup-box4 { 
+  background-color: #fff;
+  padding: 24px; 
+  border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+  width: 440px; 
+  height: 450px;
+  text-align: center;  
+  opacity: 0; 
+  transform: scale(0.8); 
+  animation: fadeInUp 0.5s ease-out forwards; 
+}
+
+.popup-box1 { 
+  background-color: #fff;
+  padding: 24px; 
+  border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+  width: 440px; 
+  height: 480px;
+  text-align: center;  
+  opacity: 0; 
+  transform: scale(0.8); 
+  animation: fadeInUp 0.5s ease-out forwards; 
+}
+
+.popup-row {
+  display: flex;
+}
+
+.form-container4 { 
+  display: flex; 
+  flex-direction: column;
+} 
+
+.form-label4 { 
+  margin-bottom: 10px; 
+  font-size: 16px; 
+  color: #444; 
+  text-align: left; 
+} 
+
+.form-input4 { 
+  padding: 10px; 
+  margin-bottom: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  font-size: 16px; 
+  width: 100%; 
+  box-sizing: border-box; 
+} 
+
+.btn-submit5{ 
+  padding: 12px 24px; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  background-color: black; 
+  color: #fff;
+  margin-bottom: 30px;
+} 
+
+.btn-submit3 {
+  margin-bottom: 0;
+  padding: 12px 24px; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  background-color: black; 
+  color: #fff;
+}
+.btn-close-popup4 { 
+  margin: 12px 17px; 
+  background-color: white;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  border: none; 
+  border-radius: 8px;
+} 
+
+/* Keyframes for fadeInUp animation */ 
+@keyframes fadeInUp { 
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  } 
+
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+} 
+
+/* Animation for popup */ 
+.overlay-container4.show { 
+  display: flex; 
+  opacity: 1; 
+} 
+.popup-text4 {
+  font-size: 45px;
+  font-family: "MonaspaceKrypton-Regular";
+  text-align: center;
+} 
+.btn-open-popup4 {
+  border: none;
+  background-color: white;
+}
+.icon3 {
+  overflow-y: hidden;
+}
+
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantity-controls button {
+  background-color: #ccc;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background-color: #999;
+}
+
+.remove-from-cart {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove-from-cart:hover {
+  background-color: #c0392b;
+}
+
+
+.cart {
+  width: 600px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+}
+
+.cart h2 {
+  margin-top: 0;
+}
+
+.cart-items {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-name {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-item-price {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.cart-total {
+  margin-top: 10px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Стили для формы отзыва */
+#review-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  float: left;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}

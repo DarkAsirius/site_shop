@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script/script1.js"></script>
+    <script src="script/script6.js"></script>
+    <script src="script/main.js"></script>
+    <script src="script/rating.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Document</title>
+</head>
+<body>
+    <header> <!-- шапка профиля -->
+        <div class="container">
+            <div class="row">
+                <div class="header_row">
+                        <div class="col-md-1">
+                            <div class="text2 number">
+                                <a href="#contact" class="text_2" href="">Контакты</a>
+                            </div>
+                        </div>
+                        <div class="number col-md-1">
+                            <div class="text3_1">
+                                <a href="#first" class="text_3_1" href="">Доставка</a>
+                            </div>
+                        </div>
+                        <div class="number col-md-1">
+                            <div class="text3_1">
+                                <a href="#second" class="text_3_1" href="">О нас</a>
+                            </div>
+                        </div>
+                        <div class="name col-md-6">
+                            <div class="text3">
+                                <p class="text_3" class="name_text3">NetCourses</p>
+                            </div>
+                        </div>
+                        <div class="icon col-md-3"><!-- иконки -->
+                            <div class="icon1"> <!-- переход с иконки на форму со входом и регистрацией -->
+                                <button class="btn-open-popup open-popup" onclick="togglePopup()"> 
+                                    <img src="images/user.png" height="23px" width="23px" alt="">
+                                </button> 
+                                <div id="popupOverlay" class="overlay-container"> <!-- script6 для отктырия и закрытия окна -->
+                                    <div class="popup-box">
+                                        <button class="btn-close-popup close-popup" onclick="togglePopup()"><img src="images/close.png" alt=""></button>
+                                        <div class="popup-text">Вход</div>
+                                    <form class="form-container"> 
+                                        <label class="form-label" for="name1">Логин:</label>
+                                        <input class="form-input" type="text" placeholder="Введите ваш логин" id="name1" name="name" required>
+                                        <label class="form-label" for="email1">Password:</label>
+                                        <input class="form-input" type="password" placeholder="Введите ваш пароль" id="email1" name="email" required>
+                            
+                                        <button class="btn-submit1" type="submit"> Войти </button> 
+                                        <button class="btn-submit2" type="submit" onclick="togglePopup1()">Зарегистрироваться </button> 
+                                    </form> 
+                                    </div> 
+                                </div> 
+                                <div id="popupOverlay2" class="overlay-container"> <!-- форма с регстрацией -->
+                                    <div class="popup-box1">
+                                        <button class="btn-close-popup close-popup" onclick="togglePopup1()"><img src="images/close.png" alt=""></button>
+                                        <div class="popup-text">Регистрация</div>
+                                    <form class="form-container"> 
+                                        <label class="form-label" for="name2">Логин:</label>
+                                        <input class="form-input" type="text" placeholder="Введите ваш логин" id="name2" name="name" required>
+                                        <label class="form-label" for="name3">Телефон:</label>
+                                        <input class="form-input" type="text" placeholder="8 (999) 765 77 77" id="name3" name="name" required>
+                                        <label class="form-label" for="email">Password:</label> 
+                                        <input class="form-input" type="text" placeholder="Введите ваш пароль" id="email" name="email" required> 
+
+                                        <button class="btn-submit3" type="submit">Зарегистрироваться </button>
+                                    </form> 
+                                    </div>
+                                </div> 
+                            </div>          
+                            <div class="icon2">
+                                <a href="">
+                                    <img src="images/free-icon-add-to-favorites-4989206.png" height="23px" width="23px" alt="">
+                                </a>
+                            </div>
+                            <div class="icon3">
+                                <button class="btn-open-popup open-popup"> 
+                                    <img src="images/free-icon-shopping-bag-2956820.png" width="32px" height="32px" alt="">
+                                    <span class="cart-count">0</span>
+                                </button>
+                            </div>
+                            <div class="popup-overlay">
+                                <div class="popup">
+                                  <div class="cart">
+                                    <h2>Корзина</h2>
+                                    <div class="cart-items" ></div>
+                                    <div class="cart-total">
+                                      <p>Общая стоимость: <span class="total">0 ₽</span></p>
+                                    </div>
+                                  </div>
+                                  <button class="popup-close">Закрыть</button>
+                                </div>
+                            </div>
+                        <script> /*ОТКРЫТИЕ КОРЗИНЫ*/
+                            const iconBtn = document.querySelector('.icon3');
+                            const popupOverlay = document.querySelector('.popup-overlay');
+                            const popupClose = document.querySelector('.popup-close');
+
+                            iconBtn.addEventListener('click', function() {
+                            popupOverlay.style.display = 'block';
+                            });
+
+                            popupClose.addEventListener('click', function() {
+                            popupOverlay.style.display = 'none';
+                            });
+
+                            window.addEventListener('click', function(event) {
+                            if (event.target === popupOverlay) {
+                                popupOverlay.style.display = 'none';
+                            }
+                            });
+                            const cartCountElement = document.querySelector('.cart-count');
+                            const cartItemsElement = document.querySelector('.cart-items');
+                            
+                        </script>
+                </div>
+            </div>
+            <div class="row">
+                <div class="menu_row"><!-- список товаров -->
+                    <div class="menu_1 col-md-2">
+                        <div class="text4 number">
+                                <a class="text_4" href="">Courses</a>
+                        </div>
+                    </div>
+                    <div class="menu_2 col-md-2">
+                        <div class="text5 number">
+                                <a class="text_5" href="">Web-Development</a>
+                        </div>
+                    </div>
+                    <div class="menu_3 col-md-2">
+                        <div class="text6 number">
+                                <a class="text_6" href="">DevOps</a>
+                        </div>
+                    </div>
+                    <div class="menu_4 col-md-2">
+                        <div class="text7 number">
+                                <a class="text_7" href="">MachineLearning</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    
+<main>
+    <div class="row"><!-- "реклама" -->
+            <div class="photo_main" id="baner1"><!-- 1 "реклама" -->
+                <div class="block"><!--блок для текста 1 рекламы поверх изображения-->
+                    <div class="text_block">
+                        <div class="text_block1">ВЕСНА - <br> ВРЕМЯ СКИДОК</div>
+                        <div class="text_block2">Самое время повысить свои знания</div>
+                    </div>
+                    <div class="button_block1">
+                        <button class="button_block_1">
+                            <div class="button_text">Подробнее ></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo_main2" id="baner2" style="display: none;"><!-- 2 "реклама" -->
+                <div class="block"><!--блок для текста 2 рекламы поверх изображения-->
+                    <div class="text_block">
+                        <div class="text_block3">SALE ДО -40%</div>
+                        <div class="text_block4">На курсы все курсы категории Web-Development</div>
+                    </div>
+                    <div class="button_block2">
+                        <button class="button_block_2">
+                            <div class="button_text">Подробнее ></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+    <script>//script для банера/рекламы
+        const baner1 = document.getElementById('baner1');
+        const baner2 = document.getElementById('baner2');
+
+        function swapBlocks() {
+            if (baner1.style.display === 'none') {
+                baner1.style.display = 'block';
+                baner2.style.display = 'none';
+            } else {
+                baner1.style.display = 'none';
+                baner2.style.display = 'block';
+            }
+        }
+        // Вызов функции через определенное время бесконечное число раз
+        setInterval(swapBlocks, 5000);
+    </script>
+
+    </div>
+        <div class="container">
+            <div class="row"><!--3 карточки товаров-->
+                <div class="courses_title">
+                    <div class="title">
+                        BEST PRODUCTS
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="courses">
+                    <div id="gallery1" class="courses_1 col-md-5"><!--script1.js 1 карточка -->
+                        <div class="img_courses_1">
+                            <img id="image1" src="images/1.png" width="180" height="180" alt=""> 
+                        </div>
+                        <div class="button-container_1">
+                            <button onclick="previousImage('gallery1')" class="prev_button button_1"></button>
+                            <button onclick="nextImage('gallery1')" class="next_button button_2"></button>
+                        </div> 
+                        <div class="cena_courses_1">
+                            <b>150000 ₽</b>
+                        </div>
+                        <div class="text_courses_1">
+                            JavaScript Developer
+                        </div>
+                        
+                        <div class="button_courses_1">
+                            <button class="button_click" data-product-id="1">
+                                <p class="p1">В корзину</p>
+                            </button>
+                            <button class="button_click1">
+                                <p class="p1" onclick="togglePopup2()">Просмотр</p>
+                            </button>
+                            <div id="popupOverlay3" class="overlay-container3"> <!-- script6 для отктырия и закрытия окна -->
+                                <div class="popup-box3">
+                                    <button class="btn-close-popup close-popup" onclick="togglePopup2()"><img src="images/close.png" alt=""></button>
+                                    <div class="row obzor_row">
+                                        <div class="container_card">
+                                            <div class="card">
+                                                <img id="main-image" class="img_obzor" src="images/1.png">
+                                                <div class="more-images">
+                                                  <img src="images/2.png"  onmouseover="changeImage('images/2.png')" onmouseout="resetImage()">
+                                                  <img src="images/1_1.png" onmouseover="changeImage('images/1_1.png')" onmouseout="resetImage()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opisanie">
+                                            <div class="title1_opisanie"> JavaScript Developer</div>
+                                            <div class="opisanie2">
+                                                <div class="title2_opisanie"> Характеристика</div>
+                                                <div class="text1_opisanie"> Артикул  ........................................................................................ 152344</div>
+                                                <div class="text2_opisanie"> Категория ........................................................................ Web-Development</div>
+                                                <div class="text3_opisanie"> Длительность ..................................................................................... 9 месяцев</div>
+                                                <div class="text4_opisanie"> Кол-во модулей ............................................................. 12</div>
+                                            </div>
+                                            <div class="cena">
+                                                <div class="text_cena">Цена</div>
+                                                <div class="text_cost">150000 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text_otzuv">
+                                        <div class="title_otzuv">
+                                            Отзывы пользователей
+                                        </div>
+                                    </div>
+                                    <div class="reviews">
+                                        <div class="review">
+                                        <div class="reviewName">Андрей</div>
+                                        <div class="reviewRate">★★★★★</div>
+                                            <div class="reviewText">Иедально для начала пути в IT.</div>
+                                        </div>
+
+                                        <div class="review">
+                                            <div class="reviewName">Никита</div>
+                                            <div class="reviewRate">★★★★★</div>
+                                            <div class="reviewText">Грамотно подобран материал, приятные менторы.</div>
+                                        </div>
+
+                                        <div class="review">
+                                            <div class="reviewName">Мария</div>
+                                            <div class="reviewRate"> ★★★★</div>
+                                            <div class="reviewText">Прекрасный курс.</div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewWrite">
+                                        <div class="Writerewiew">
+                                            Оставить отзыв
+                                        </div>
+                                    </div>
+                                    <div class="reviewsBlock">
+                                        <div class="reviewBlock">
+                                            <div class="ratingBlock">
+                                                <div class="estimation">Оцените товар</div>
+                                                <div class="rating">
+                                                    <span class="star" onclick="selectRating(1)">&#9734;</span>
+                                                    <span class="star" onclick="selectRating(2)">&#9734;</span>
+                                                    <span class="star" onclick="selectRating(3)">&#9734;</span>
+                                                    <span class="star" onclick="selectRating(4)">&#9734;</span>
+                                                    <span class="star" onclick="selectRating(5)">&#9734;</span>
+                                                </div>
+                                            </div>
+                                            <form id="review-form1">
+                                            
+                                                <div class="form-group">
+                                                  <label for="review1" class="OtzuvLabel">Комментарий к товару:</label>
+                                                  <textarea id="review1" name="review" rows="5" required></textarea>
+                                                </div>
+                                              
+                                                <div class="form-group">
+                                                  <label for="files1" class="OtzuvLabel">Прикрепить файлы:</label>
+                                                  <input type="file" id="files1" name="files" multiple>
+                                                </div>
+                                              
+                                                <button type="submit" class="btn">Оставить отзыв</button>
+                                              </form>
+                                              
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <script>
+                                function changeImage(imagesUrl) {
+                                  document.getElementById('main-image').src = imagesUrl;
+                                }
+                            
+                                function resetImage() {
+                                  document.getElementById('main-image').src = 'images/1.png';
+                                }
+                              </script> 
+                        </div>  
+                    </div>
+
+                    <div id="gallery2" class="courses_2 col-md-5"><!--script1.js 2 карточка -->
+                        <div class="img_courses_2">
+                            <img id="image2" src="images/3.png" width="180" height="180" alt=""> 
+                        </div>
+                        <div class="button-container_2">
+                            <button onclick="previousImage1('gallery2')" class="button_1" class="prev_button1"></button>
+                            <button onclick="nextImage1('gallery2')" class="button_2" class="next_button1"></button>
+                        </div> 
+                        <div class="cena_courses_1">
+                            <b>190000 ₽</b>
+                        </div>
+                        <div class="text_courses_1">
+                            React Web-Developer
+                        </div>
+                        <div class="button_courses_1">
+                            <button class="button_click" data-product-id="2">
+                                <p class="p1">В корзину</p>
+                            </button>
+                            <button class="button_click1">
+                                <p class="p1" onclick="togglePopup4()">Просмотр</p>
+                            </button>
+                            <div id="popupOverlay4" class="overlay-container3"> <!-- script6 для отктырия и закрытия окна -->
+                                <div class="popup-box3">
+                                    <button class="btn-close-popup close-popup" onclick="togglePopup4()"><img src="images/close.png" alt=""></button>
+                                    <div class="row obzor_row">
+                                        <div class="container_card">
+                                            <div class="card">
+                                                <img id="main-image2" class="img_obzor" src="images/3.png">
+                                                <div class="more-images">
+                                                  <img src="images/4.png"  onmouseover="changeImage2('images/4.png')" onmouseout="resetImage2()">
+                                                  <img src="images/it.png" onmouseover="changeImage2('images/it.png')" onmouseout="resetImage2()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opisanie">
+                                            <div class="title1_opisanie"> React-Developer</div>
+                                            <div class="opisanie2">
+                                                <div class="title2_opisanie"> Характеристика</div>
+                                                <div class="text1_opisanie"> Артикул  ........................................................................................ 164582</div>
+                                                <div class="text2_opisanie"> Категория ........................................................................ Web-Development</div>
+                                                <div class="text3_opisanie"> Длительность ..................................................................................... 24 месяцп</div>
+                                                <div class="text4_opisanie"> Кол-во модулей ............................................................. 26</div>
+                                            </div>
+                                            <div class="cena">
+                                                <div class="text_cena">Цена</div>
+                                                <div class="text_cost">190000 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text_otzuv">
+                                        <div class="title_otzuv">
+                                            Отзывы пользователей
+                                        </div>
+                                    </div>
+                                    <div class="reviews">
+                                        <div class="review">
+                                        <div class="reviewName">Анна</div>
+                                        <div class="reviewRate">★★★★</div>
+                                            <div class="reviewText">Этот курс по React просто потрясающий! Я начинающий разработчик, и благодаря этому курсу я смогла глубоко понять основы React и начать создавать свои собственные веб-приложения. Преподаватель объясняет все очень понятно, а практические задания помогли мне закрепить полученные знания. Очень рекомендую этот курс всем, кто хочет освоить React!</div>
+                                        </div>
+
+                                        <div class="review">
+                                            <div class="reviewName">Михаил</div>
+                                            <div class="reviewRate">★★★★★</div>
+                                            <div class="reviewText">Я уже имел опыт работы с React, но решил пройти этот курс для того, чтобы углубить свои знания и изучить передовые техники разработки. Этот курс оправдал мои ожидания на 100%! Преподаватель затрагивает сложные темы и предлагает решения реальных проблем, с которыми сталкиваются разработчики в своей повседневной практике. Очень рекомендую этот курс опытным разработчикам, которые хотят улучшить свои навыки в React</div>
+                                        </div>
+
+                                        <div class="review">
+                                            <div class="reviewName">Елена</div>
+                                            <div class="reviewRate"> ★★★★</div>
+                                            <div class="reviewText">Этот курс по React был для меня настоящим открытием! Я никогда раньше не имела опыта в программировании, но благодаря понятным объяснениям и доступному формату обучения я смогла освоить React и начать создавать свои собственные веб-приложения уже после первых уроков. Огромное спасибо команде курса за их терпение и поддержку! Я очень довольна результатом и с нетерпением жду продолжения обучения</div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewWrite">
+                                        <div class="Writerewiew">
+                                            Оставить отзыв
+                                        </div>
+                                    </div>
+                                    <div class="reviewsBlock">
+                                        <div class="reviewBlock">
+                                            <div class="ratingBlock">
+                                                <div class="estimation">Оцените товар</div>
+                                                <div class="rating2">
+                                                    <span class="star1" onclick="selectRating2(1)">&#9734;</span>
+                                                    <span class="star1" onclick="selectRating2(2)">&#9734;</span>
+                                                    <span class="star1" onclick="selectRating2(3)">&#9734;</span>
+                                                    <span class="star1" onclick="selectRating2(4)">&#9734;</span>
+                                                    <span class="star1" onclick="selectRating2(5)">&#9734;</span>
+                                                </div>
+                                            </div>
+                                            <form id="review-form2">
+                                            
+                                                <div class="form-group">
+                                                  <label for="review2" class="OtzuvLabel">Комментарий к товару:</label>
+                                                  <textarea id="review2" name="review" rows="5" required></textarea>
+                                                </div>
+                                              
+                                                <div class="form-group">
+                                                  <label for="files2" class="OtzuvLabel">Прикрепить файлы:</label>
+                                                  <input type="file" id="files2" name="files" multiple>
+                                                </div>
+                                              
+                                                <button type="submit" class="btn">Оставить отзыв</button>
+                                              </form>
+                                              
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <script>
+                                function changeImage2(imagesUrl) {
+                                  document.getElementById('main-image2').src = imagesUrl;
+                                }
+                            
+                                function resetImage2() {
+                                  document.getElementById('main-image2').src = 'images/3.png';
+                                }
+                              </script> 
+                        </div>
+                    </div>
+
+                    <div id="gallery3" class="courses_3 col-md-5"><!--script1.js 3 карточка -->
+                        <div class="img_courses_3">
+                            <img id="image3" src="images/5.png" width="180" height="180" alt=""> 
+                        </div>
+                        <div class="button-container_3">
+                            <button onclick="previousImage2('gallery3')" class="button_1" class="prev_button3"></button>
+                            <button onclick="nextImage2('gallery3')" class="button_2" class="next_button3"></button>
+                        </div> 
+                        <div class="cena_courses_1">
+                           <b>220000 ₽</b>
+                        </div>
+                        <div class="text_courses_1">
+                            Python-Developer
+                        </div>
+                        <div class="button_courses_1" >
+                            <button class="button_click" data-product-id="3">
+                                <p class="p1">В корзину</p>
+                            </button>
+                            <button class="button_click1">
+                                <p class="p1" onclick="togglePopup5()">Просмотр</p>
+                            </button>
+                            <div id="popupOverlay5" class="overlay-container3"> <!-- script6 для отктырия и закрытия окна -->
+                                <div class="popup-box3">
+                                    <button class="btn-close-popup close-popup" onclick="togglePopup5()"><img src="images/close.png" alt=""></button>
+                                    <div class="row obzor_row">
+                                        <div class="container_card">
+                                            <div class="card">
+                                                <img id="main-image3" class="img_obzor" src="images/5.png">
+                                                <div class="more-images">
+                                                  <img src="images/6.png"  onmouseover="changeImage3('images/6.png')" onmouseout="resetImage3()">
+                                                  <img src="images/it2.png" onmouseover="changeImage3('images/it2.png')" onmouseout="resetImage3()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opisanie">
+                                            <div class="title1_opisanie"> Python-Developer</div>
+                                            <div class="opisanie2">
+                                                <div class="title2_opisanie"> Характеристика</div>
+                                                <div class="text1_opisanie"> Артикул  ........................................................................................ 152344</div>
+                                                <div class="text2_opisanie"> Категория ........................................................................ Web-Development</div>
+                                                <div class="text3_opisanie"> Длительность ..................................................................................... 9 месяцев</div>
+                                                <div class="text4_opisanie"> Кол-во модулей ............................................................. 12</div>
+                                            </div>
+                                            <div class="cena">
+                                                <div class="text_cena">Цена</div>
+                                                <div class="text_cost">55 599 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text_otzuv">
+                                        <div class="title_otzuv">
+                                            Отзывы пользователей
+                                        </div>
+                                    </div>
+                                    <div class="reviews">
+                                        <div class="review">
+                                        <div class="reviewName">Иван</div>
+                                        <div class="reviewRate">★★★★</div>
+                                            <div class="reviewText">Отличный курс по Python! Я начал изучать программирование с нуля, и этот курс помог мне быстро освоить основы языка. Преподаватель очень четко объясняет материал, а практические задания помогают закрепить знания. Благодаря этому курсу я теперь могу писать собственные программы и решать задачи на Python. Рекомендую всем новичкам!</div>
+                                        </div>
+
+                                        <div class="review">
+                                            <div class="reviewName">Елена</div>
+                                            <div class="reviewRate">★★★★★</div>
+                                            <div class="reviewText">"Этот курс по Python просто замечательный! Я уже имела некоторый опыт программирования на других языках, но решила изучить Python для расширения своих навыков. Мне понравилось, насколько курс подробно освещает различные аспекты языка, включая работу с данными, веб-разработку и многое другое. Теперь я чувствую себя гораздо увереннее в использовании Python в своих проектах!</div>
+                                        </div>
+
+                                        <div class="review">
+                                            <div class="reviewName">Андрей</div>
+                                            <div class="reviewRate"> ★★★★★</div>
+                                            <div class="reviewText">Этот курс по Python превзошел мои ожидания! Я был приятно удивлен его глубиной и полнотой. Преподаватель не только объясняет основы языка, но и рассматривает более сложные темы, такие как объектно-ориентированное программирование и алгоритмы. Особенно мне понравилось большое количество практических заданий, которые помогли мне усвоить материал. Очень рекомендую этот курс всем, кто хочет глубоко изучить Python!</div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewWrite">
+                                        <div class="Writerewiew">
+                                            Оставить отзыв
+                                        </div>
+                                    </div>
+                                    <div class="reviewsBlock">
+                                        <div class="reviewBlock">
+                                            <div class="ratingBlock">
+                                                <div class="estimation">Оцените товар</div>
+                                                <div class="rating3">
+                                                    <span class="star2" onclick="selectRating3(1)">&#9734;</span>
+                                                    <span class="star2" onclick="selectRating3(2)">&#9734;</span>
+                                                    <span class="star2" onclick="selectRating3(3)">&#9734;</span>
+                                                    <span class="star2" onclick="selectRating3(4)">&#9734;</span>
+                                                    <span class="star2" onclick="selectRating3(5)">&#9734;</span>
+                                                </div>
+                                            </div>
+                                            <form id="review-form">
+                                            
+                                                <div class="form-group">
+                                                  <label for="review" class="OtzuvLabel">Комментарий к товару:</label>
+                                                  <textarea id="review" name="review" rows="5" required></textarea>
+                                                </div>
+                                              
+                                                <div class="form-group">
+                                                  <label for="files3" class="OtzuvLabel">Прикрепить файлы:</label>
+                                                  <input type="file" id="files3" name="files" multiple>
+                                                </div>
+                                              
+                                                <button type="submit" class="btn">Оставить отзыв</button>
+                                              </form>
+                                              
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <script>
+                                function changeImage3(imagesUrl) {
+                                  document.getElementById('main-image3').src = imagesUrl;
+                                }
+
+                                function resetImage3() {
+                                  document.getElementById('main-image3').src = 'images/5.png';
+                                }
+                              </script>
+                        </div>
+                        <script src="script/script2.js"></script>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row"><!--4-6 карточки товаров-->
+                <div class="courses_title">
+                    <div class="title">
+                        NEW PRODUCTS
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="courses">
+                    <div id="gallery4" class="courses_3 col-md-5"><!--script1.js 4 карточка -->
+                        <div class="img_courses_3">
+                            <img id="image4" src="images/7.png" width="180" height="180" alt=""> 
+                        </div>
+                        <div class="button-container_3">
+                            <button onclick="previousImage3('gallery4')" class="button_1" class="prev_button4"></button>
+                            <button onclick="nextImage3('gallery4')" class="button_2" class="next_button4"></button>
+                        </div> 
+                        <div class="cena_courses_1">
+                            <b>170000 ₽</b>
+                        </div>
+                        <div class="text_courses_1">
+                            GoLang Developer
+                        </div>
+                        <div class="button_courses_1">
+                            <button class="button_click">
+                                <p class="p1">Выбрать</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="gallery5" class="courses_3 col-md-5">
+                        <div class="img_courses_3">
+                            <img id="image5" src="images/9.png" width="180" height="180" alt="">
+                        </div>
+                        <div class="button-container_3">
+                            <button onclick="previousImage4('gallery5')" class="button_1" class="prev_button3"></button>
+                            <button onclick="nextImage4('gallery5')" class="button_2" class="next_button3"></button>
+                        </div> 
+                        <div class="cena_courses_1">
+                            <b>100000 ₽</b>
+                        </div>
+                        <div class="text_courses_1">
+                            PHP Developer
+                        </div>
+                        <div class="button_courses_1">
+                            <button class="button_click">
+                                <p class="p1">Выбрать</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="gallery6" class="courses_3 col-md-5">
+                        <div class="img_courses_3">
+                            <img id="image6" src="images/11.png" width="180" height="180" alt="">
+                        </div>
+                        <div class="button-container_3">
+                            <button onclick="previousImage5('gallery6')" class="button_1" class="prev_button3"></button>
+                            <button onclick="nextImage5('gallery6')" class="button_2" class="next_button3"></button>
+                        </div> 
+                        <div class="cena_courses_1">
+                            <b>150000 ₽</b>
+                        </div>
+                        <div class="text_courses_1">
+                            Angular Developer
+                        </div>
+                        <div class="button_courses_1">
+                            <button class="button_click">
+                                <p class="p1">Выбрать</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="help">
+                    <div class="help_text col-md-7">
+                        <div id="first" class="title_help">
+                            Условия
+                        </div>
+                        <div class="text_help">
+                            <p style="font-weight: bold; font-size: 20px;">Условия оформления и прохождения курсов</p>
+                            <p style="font-size: 16px;">
+                                <b>1. Регистрация и оплата</b>
+                                - Для доступа к курсам необходимо зарегистрироваться на нашей платформе обучения.
+                                - После регистрации пользователь может выбрать интересующий курс и оплатить доступ к нему.
+                                <br>
+                                <b>2. Доступ к контенту</b>
+                                - После успешной оплаты пользователь получает неограниченный доступ ко всем материалам выбранного курса.
+                                - Материалы курса включают в себя видеоуроки, текстовые материалы, практические задания и другие образовательные ресурсы.
+                                <br>
+                                <b>3. Время и темп обучения</b>
+                                - У каждого курса есть определенный срок, в течение которого рекомендуется завершить обучение.
+                                - Студенты могут выбирать свой собственный темп обучения и проходить материалы в удобное для них время.
+                                <br>
+                                <b>4. Тестирование и оценка</b>
+                                - По мере прохождения курса предлагаются тесты для проверки понимания материала.
+                                - Результаты тестов используются для оценки успеваемости студентов.
+                                <br>
+                                <b>5. Сертификация</b>
+                                - После успешного завершения курса студент получает официальный сертификат об окончании.
+                                - Сертификат подтверждает приобретенные знания и навыки в соответствующей области IT.
+                                <br>
+                                <b>6. Поддержка и обратная связь</b>
+                                - Наши эксперты готовы помочь студентам в случае возникновения вопросов или проблем в процессе обучения.
+                                - Мы также ценим вашу обратную связь о курсах для их постоянного улучшения.
+                                <br>
+                                <b>7. Доступность</b>
+                                - Наша платформа доступна на компьютерах, планшетах и смартфонах, обеспечивая гибкость и удобство обучения в любом месте и в любое время.
+                                <br>
+                                <b>8. Обновление материалов</b>
+                                - Материалы курсов регулярно обновляются, чтобы отражать последние технологические тренды и изменения в отрасли IT.
+                                <br>
+                                <b>9. Социальное взаимодействие</b>
+                                - На нашей платформе вы можете общаться и сотрудничать с другими студентами через форумы, чаты и группы обсуждения.
+                                <br>
+                                <b>10. Продолжительность доступа</b>
+                                - После оплаты курса у вас есть доступ к материалам в течение определенного времени. По истечении срока доступ может быть ограничен.
+                                <br>
+                                С учетом этих условий вы можете начать свой путь в мире IT обучения прямо сейчас! Если у вас возникли вопросы или требуется помощь, не стесняйтесь обращаться к нашей поддержке.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="help_photo col-md-4">
+                        <img src="images/help.png" width="600" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row"><!--доставка товаров-->
+                <div class="Company">
+                    <div class="company_text">
+                        <div id="second" class="title_company">
+                            О компании
+                        </div>
+                        <div class="text_company">
+                            NetCourses - это ведущая компания, специализирующаяся на предоставлении качественного образования в области информационных технологий (IT). Мы стремимся предложить широкий спектр курсов, позволяющих нашим клиентам приобретать актуальные навыки и знания для успешной карьеры в IT.
+                            <br>
+                            <b>Наши ценности:</b>
+                            <br>
+                            <b>1. Качество образования:</b> Мы уделяем особое внимание качеству предоставляемого образования. Все наши курсы разработаны опытными преподавателями и экспертами в соответствующих областях, чтобы обеспечить нашим студентам самые современные знания и навыки.
+                            <br>
+                            <b>2. Гибкость и доступность:</b> Мы понимаем, что каждый студент уникален, поэтому мы предлагаем гибкие графики обучения и различные форматы курсов, чтобы каждый мог найти оптимальный вариант для себя. Наши курсы доступны онлайн, что позволяет учиться в любом месте и в любое время.
+                            <br>
+                            <b>3. Поддержка студентов:</b> Мы ценим каждого нашего студента и стремимся обеспечить им максимальное удобство и поддержку в процессе обучения. Наша команда всегда готова помочь решить любые вопросы и проблемы, возникающие во время прохождения курсов.
+                            <br>
+                            <b>4. Постоянное развитие и обновление:</b> Мы следим за последними тенденциями в IT отрасли и регулярно обновляем наши курсы, чтобы предложить студентам самые актуальные знания и навыки.
+                            <br>
+                            <b>5. Партнерство с ведущими компаниями:</b> Мы сотрудничаем с ведущими компаниями и специалистами в IT сфере, чтобы обеспечить нашим студентам доступ к экспертам и реальным проектам, что делает наше обучение максимально практическим и применимым.
+                            <br>
+                            <b>Наша миссия:</b>
+                            <br>
+                            Наша миссия состоит в том, чтобы помочь людям раскрыть их потенциал в IT сфере, предоставляя им доступ к качественному образованию и возможность преуспеть в своей карьере.
+
+                            Благодаря нашему опыту, экспертизе и приверженности качеству, NetCourses является идеальным партнером для всех, кто стремится достичь успеха в мире информационных технологий.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="row ">
+                <div class="footer1">
+                    <div class="footer_1">
+                        <p style="font-size: 16px; opacity: 0.9;">Кабинет</p>
+                        <p style="font-size: 20px;">
+                            Личный кабинет<br>
+                            Избранное<br>
+                            Мои заказы<br>
+                        </p>
+                        <br><br>
+                        <p style="font-size: 16px; opacity: 0.9;">Полезное</p>
+                        <p style="font-size: 20px;">
+                            Подарочные сертификаты<br>
+                            Как связаться с ментором?<br>
+                            Как проходить курсы?<br>
+                        </p>
+                    </div>
+                    <div class="footer_2">
+                        <p style="font-size: 16px; opacity: 0.9;">Помощь</p>
+                        <p style="font-size: 20px;">
+                            Гарантия<br>
+                            Оплата<br>
+                            Помощь клиентам<br>
+                            Сертификация <br>
+                            Вопросы и ответы <br>
+                            Задать вопрос <br>
+                        </p>
+                    </div>
+                    <div id="contact" class="footer_3">
+                        <p style="font-size: 16px; opacity: 0.9;">Контакты</p>
+                        <p style="font-size: 20px;">
+                            Адрес: <br>
+                            пер. Газетный 74<br>
+                            Номер телефона: <br>
+                            8 (962) 252 54 89у
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
